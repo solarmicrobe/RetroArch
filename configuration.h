@@ -520,6 +520,11 @@ typedef struct settings
       char webdav_url[NAME_MAX_LENGTH];
       char webdav_username[NAME_MAX_LENGTH];
       char webdav_password[NAME_MAX_LENGTH];
+#ifdef HAVE_S3
+      char s3_url[NAME_MAX_LENGTH];
+      char access_key_id[128];
+      char secret_access_key[186]; /* TODO/RESEARCH - check size, ex https://github.com/winscp/winscp/pull/15/files */
+#endif
 
       char crt_switch_timings[NAME_MAX_LENGTH];
       char input_reserved_devices[MAX_USERS][NAME_MAX_LENGTH];
