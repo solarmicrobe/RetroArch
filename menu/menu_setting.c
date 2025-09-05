@@ -11864,13 +11864,14 @@ static bool setting_append_list(
          (*list)[list_info->index - 1].ui_type       = ST_UI_TYPE_PASSWORD_LINE_EDIT;
          (*list)[list_info->index - 1].action_start  = setting_generic_action_start_default;
 
+#ifdef HAVE_S3
          /* AWS */
          CONFIG_STRING(
                list, list_info,
                settings->arrays.s3_url,
                sizeof(settings->arrays.s3_url),
-               MENU_ENUM_LABEL_CLOUD_SYNC_URL,
-               MENU_ENUM_LABEL_VALUE_CLOUD_SYNC_URL,
+               MENU_ENUM_LABEL_CLOUD_SYNC_S3_URL,
+               MENU_ENUM_LABEL_VALUE_CLOUD_SYNC_S3_URL,
                "",
                &group_info,
                &subgroup_info,
@@ -11914,6 +11915,7 @@ static bool setting_append_list(
          SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
          (*list)[list_info->index - 1].ui_type       = ST_UI_TYPE_PASSWORD_LINE_EDIT;
          (*list)[list_info->index - 1].action_start  = setting_generic_action_start_default;
+#endif
 
          END_SUB_GROUP(list, list_info, parent_group);
          END_GROUP(list, list_info, parent_group);

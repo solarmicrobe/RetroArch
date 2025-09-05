@@ -1708,6 +1708,7 @@ CLOUD SYNC
 #include "../tasks/task_cloudsync.c"
 #include "../network/cloud_sync_driver.c"
 #include "../network/cloud_sync/webdav.c"
+#include "../network/cloud_sync/s3.c"
 #endif
 
 /*============================================================

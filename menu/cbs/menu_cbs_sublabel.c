@@ -268,6 +268,7 @@ DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_sync_thumbs,        MENU_
 DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_sync_system,        MENU_ENUM_SUBLABEL_CLOUD_SYNC_SYNC_SYSTEM)
 DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_driver,             MENU_ENUM_SUBLABEL_CLOUD_SYNC_DRIVER)
 DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_url,                MENU_ENUM_SUBLABEL_CLOUD_SYNC_URL)
+DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_s3_url,             MENU_ENUM_SUBLABEL_CLOUD_SYNC_S3_URL)
 DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_username,           MENU_ENUM_SUBLABEL_CLOUD_SYNC_USERNAME)
 DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_password,           MENU_ENUM_SUBLABEL_CLOUD_SYNC_PASSWORD)
 DEFAULT_SUBLABEL_MACRO(action_bind_sublabel_cloud_sync_access_key_id,      MENU_ENUM_SUBLABEL_CLOUD_SYNC_ACCESS_KEY_ID)
@@ -5234,6 +5235,9 @@ int menu_cbs_init_bind_sublabel(menu_file_list_cbs_t *cbs,
             break;
          case MENU_ENUM_LABEL_CLOUD_SYNC_URL:
             BIND_ACTION_SUBLABEL(cbs, action_bind_sublabel_cloud_sync_url);
+            break;
+         case MENU_ENUM_LABEL_CLOUD_SYNC_S3_URL:
+            BIND_ACTION_SUBLABEL(cbs, action_bind_sublabel_cloud_sync_s3_url);
             break;
          case MENU_ENUM_LABEL_CLOUD_SYNC_USERNAME:
             BIND_ACTION_SUBLABEL(cbs, action_bind_sublabel_cloud_sync_username);

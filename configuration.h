@@ -517,13 +517,18 @@ typedef struct settings
       char audio_device[NAME_MAX_LENGTH];
       char camera_device[NAME_MAX_LENGTH];
       char netplay_mitm_server[NAME_MAX_LENGTH];
-      char webdav_url[NAME_MAX_LENGTH];
+#ifdef HAVE_NETWORKING
+#ifdef HAVE_CLOUDSYNC
+      char cloud_sync_url[NAME_MAX_LENGTH];
+      char webdav_url[NAME_MAX_LENGTH]; // Deprecated in favor of the generic cloud_sync_url
       char webdav_username[NAME_MAX_LENGTH];
       char webdav_password[NAME_MAX_LENGTH];
+#endif
 #ifdef HAVE_S3
       char s3_url[NAME_MAX_LENGTH];
       char access_key_id[128];
       char secret_access_key[186]; /* TODO/RESEARCH - check size, ex https://github.com/winscp/winscp/pull/15/files */
+#endif
 #endif
 
       char crt_switch_timings[NAME_MAX_LENGTH];
